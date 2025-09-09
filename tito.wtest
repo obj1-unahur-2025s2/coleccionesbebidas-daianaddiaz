@@ -3,7 +3,7 @@ import tito.*
 describe "test de tito" {
 
     method initialize() {
-        tito.consumir(5,wisky)
+        tito.consumir(5,whisky)
     }
 
     method consumoTerere() {
@@ -27,6 +27,19 @@ describe "test de tito" {
     test "si consume cianuro la velocidad es cero porque muere" {
         tito.consumir(5, cianuro)
         assert.equals(0,tito.velocidad())
+    }
+    
+    test "tito consume un licuado de naranja y mandarina" {
+        licuado.agregar(naranja)
+        licuado.agregar(mandarina)
+        tito.consumir(3000, licuado)
+        assert.equals(315000, tito.velocidad())
+    }
+
+    test "tito consume agua saborizada de whisky" {
+        saborizada.saborizar(whisky)
+        tito.consumir(8, saborizada)
+        assert.equals(12.67, tito.velocidad())
     }
 
 }
