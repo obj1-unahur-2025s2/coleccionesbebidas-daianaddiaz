@@ -57,9 +57,18 @@ object coctel {
         ingredientes.add(unIngrediente)
     }
     method rendimiento(cantidad) {
-        return cantidad / ingredientes.size() 
+        ingredientes.fold(1, {acumulador, i => acumulador * i.rendimiento(cantidad/ingredientes.size())})
     }
+
 }
+
+/*
+FOLD
+iteracion y procesamiento de elementos.
+ejemplo:
+
+cantDeCaracteres = mensajes.fold(0, {acumulador, i => acumulador + i.length()})
+*/
 
 object naranja {
     method nutrientes() = 10
